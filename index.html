@@ -3,39 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio de Actriz</title>
+  <title>Portfolio de Andrea Carabias</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Andrea Carabias</h1>
-    <p>Actriz profesional – Cine, Teatro y Televisión</p>
+    <div class="container">
+      <h1>Andrea Carabias</h1>
+      <p> Modelo y actriz de cine, teatro y televisión</p>
+    </div>
   </header>
 
-  <section class="bio">
-    <h2>Sobre mí</h2>
-    <p>Actriz apasionada en artes escénicas. Disponible para castings y proyectos audiovisuales.</p>
-  </section>
+  <main>
+    <section class="about container">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy modelo y actriz profesional con experiencia en teatro, televisión y cine. Me apasiona contar historias a través de la actuación y estoy disponible para nuevos proyectos y castings.
+      </p>
+    </section>
 
-  <section class="galeria">
-    <h2>Galería</h2>
-    <img src="img/foto1.png" alt="Foto de modelaje 1" />
-    <img src="img/foto2.png" alt="Foto de modelaje 2" />
-  </section>
+    <section class="gallery container">
+      <h2>Galería de Fotos</h2>
+      <div class="grid">
+        <img src="img/foto1.png" alt="Modelaje 1" />
+        <img src="img/foto2.png" alt="Modelaje 2" />
+      </div>
+    </section>
 
-  <section class="videos">
-    <h2>Videos</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-  </section>
+    <section class="videos container">
+      <h2>Reel y Videos</h2>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
 
-  <section class="contacto">
-    <h2>Contacto</h2>
-    <p>Email: andreacarabiasactriz@gmail.com</p>
-    <p>Instagram: @andreacarabias</p>
-  </section>
+    <section class="contact container">
+      <h2>Contacto</h2>
+      <p>Email: <a href="mailto:andreacarabiasactriz@gmail.com">andreacarabiasactriz@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/andreacarabias" target="_blank">@andreacarabias</a></p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Andrea Carabias</p>
+    <div class="container">
+      <p>&copy; 2025 Andrea Carabias | Portfolio personal</p>
+    </div>
   </footer>
 </body>
 </html>
