@@ -93,11 +93,34 @@ footer {
 /* Animaciones suaves al hacer scroll */
 .hidden {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transform: translateY(40px);
+  transition: opacity 1.6s ease, transform 1.6s ease;
 }
 
 .fade-in {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* --- Animación especial para el header (rebote desde la derecha) --- */
+header {
+  animation: bounce-in-right 1.5s ease-out forwards;
+  opacity: 0; /* Para que no aparezca de golpe */
+}
+
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
