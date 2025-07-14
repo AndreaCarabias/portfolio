@@ -94,13 +94,15 @@ footer {
 .hidden {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 1.6s ease, transform 1.6s ease;
+  pointer-events: none;
 }
 
 .fade-in {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 1.6s ease, transform 1.6s ease;
 }
+
 
 /* --- Animación especial para el header (rebote desde la derecha) --- */
 header {
