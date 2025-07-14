@@ -55,10 +55,18 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('fade-in');
-          observer.unobserve(entry.target);
+          entry.target.classList.remove('hidden');
+        } else {
+          entry.target.classList.remove('fade-in');
+          entry.target.classList.add('hidden');
         }
       });
+    }, {
+      root: null,
+      threshold: 0,
+      rootMargin: "0px 0px -25% 0px" // 75% del viewport
     });
+
     document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
   </script>
   
