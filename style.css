@@ -117,12 +117,27 @@ header {
   z-index: 1;
 }
 
+/* Fondo oscuro al hacer zoom */
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: none;
+}
+
 .zoomable.zoomed {
-  transform: scale(2.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2.2);
   z-index: 1000;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
   cursor: zoom-out;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 @keyframes bounce-in-right {
