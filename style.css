@@ -93,7 +93,7 @@ footer {
 }
 
 /* Animaciones suaves al hacer scroll */
-.hidden {
+.hidden:not(.fade-in) {
   opacity: 0;
   transform: translateY(40px);
   pointer-events: none;
