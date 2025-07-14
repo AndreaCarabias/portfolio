@@ -105,8 +105,7 @@ footer {
 /* --- Animación especial para el header (rebote desde la derecha) --- */
 header {
   animation: bounce-in-right 1.5s ease-out forwards;
-  opacity: 0; /* Para que no aparezca de golpe */
-}
+  }
 
 @keyframes bounce-in-right {
   0% {
