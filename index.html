@@ -113,7 +113,29 @@
       });
       overlay.style.display = 'none';
     });
+<!-- Overlay de zoom -->
+<div class="zoom-overlay" id="zoomOverlay">
+  <img src="" alt="Imagen ampliada" id="zoomedImage">
+</div>
   </script>
+
+  <script>
+  const zoomables = document.querySelectorAll('.zoomable');
+  const overlay = document.getElementById('zoomOverlay');
+  const zoomedImage = document.getElementById('zoomedImage');
+
+  zoomables.forEach(img => {
+    img.addEventListener('click', () => {
+      zoomedImage.src = img.src;
+      overlay.style.display = 'flex';
+    });
+  });
+
+  overlay.addEventListener('click', () => {
+    overlay.style.display = 'none';
+    zoomedImage.src = '';
+  });
+</script>
   
 </body>
 </html>
