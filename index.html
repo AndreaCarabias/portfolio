@@ -8,21 +8,21 @@
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container" class="about container hidden">
       <h1>Andrea Carabias</h1>
       <p> Modelo y actriz de cine, teatro y televisión</p>
     </div>
   </header>
 
   <main>
-    <section class="about container">
+    <section class="about container" class="about container hidden">
       <h2>Sobre mí</h2>
       <p>
         Soy modelo y actriz profesional con experiencia en teatro, televisión y cine. Me apasiona contar historias a través de la actuación y estoy disponible para nuevos proyectos y castings.
       </p>
     </section>
 
-    <section class="gallery container">
+    <section class="gallery container" class="about container hidden">
       <h2>Galería de Fotos</h2>
       <div class="grid">
         <img src="img/foto1.png" alt="Modelaje 1" />
@@ -30,14 +30,14 @@
       </div>
     </section>
 
-    <section class="videos container">
+    <section class="videos container" class="about container hidden">
       <h2>Reel y Videos</h2>
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
       </div>
     </section>
 
-    <section class="contact container">
+    <section class="contact container" class="about container hidden">
       <h2>Contacto</h2>
       <p>Email: <a href="mailto:andreacarabiasactriz@gmail.com">andreacarabiasactriz@gmail.com</a></p>
       <p>Instagram: <a href="https://instagram.com/andreacarabias" target="_blank">@andreacarabias</a></p>
@@ -49,5 +49,18 @@
       <p>&copy; 2025 Andrea Carabias | Portfolio personal</p>
     </div>
   </footer>
+ 
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+  </script>
+  
 </body>
 </html>
