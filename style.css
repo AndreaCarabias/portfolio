@@ -118,6 +118,7 @@ header {
 }
 
 /* Fondo oscuro al hacer zoom */
+/* NUEVO: Overlay de zoom */
 .zoom-overlay {
   position: fixed;
   top: 0;
@@ -125,8 +126,18 @@ header {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 999;
   display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.zoom-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  cursor: zoom-out;
 }
 
 .zoomable.zoomed {
