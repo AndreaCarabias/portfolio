@@ -55,16 +55,14 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('fade-in');
-          entry.target.classList.remove('hidden');
         } else {
           entry.target.classList.remove('fade-in');
-          entry.target.classList.add('hidden');
         }
       });
     }, {
       root: null,
       threshold: 0,
-      rootMargin: "0px 0px -25% 0px" // 75% del viewport
+      rootMargin: "0px 0px -25% 0px"
     });
 
     document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
