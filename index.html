@@ -81,38 +81,6 @@
 
     document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 
-    // Crear overlay
-    const overlay = document.createElement('div');
-    overlay.className = 'zoom-overlay';
-    document.body.appendChild(overlay);
-  
-    // Zoom al hacer clic
-    const zoomables = document.querySelectorAll('.zoomable');
-  
-    zoomables.forEach(img => {
-      img.addEventListener('click', e => {
-        const isZoomed = img.classList.contains('zoomed');
-  
-        // Cerrar si ya está ampliada
-        if (isZoomed) {
-          img.classList.remove('zoomed');
-          overlay.style.display = 'none';
-        } else {
-          // Quitar zoom de otras imágenes por si acaso
-          zoomables.forEach(other => other.classList.remove('zoomed'));
-          img.classList.add('zoomed');
-          overlay.style.display = 'block';
-        }
-      });
-    });
-  
-    // Al hacer clic en el overlay, quitar zoom
-    overlay.addEventListener('click', () => {
-      document.querySelectorAll('.zoomable.zoomed').forEach(img => {
-        img.classList.remove('zoomed');
-      });
-      overlay.style.display = 'none';
-    });
   </script>
 
   <!-- Overlay de zoom -->
@@ -121,22 +89,22 @@
   </div>
   
   <script>
-  const zoomables = document.querySelectorAll('.zoomable');
-  const overlay = document.getElementById('zoomOverlay');
-  const zoomedImage = document.getElementById('zoomedImage');
-
-  zoomables.forEach(img => {
-    img.addEventListener('click', () => {
-      zoomedImage.src = img.src;
-      overlay.style.display = 'flex';
+    const zoomables = document.querySelectorAll('.zoomable');
+    const overlay = document.getElementById('zoomOverlay');
+    const zoomedImage = document.getElementById('zoomedImage');
+  
+    zoomables.forEach(img => {
+      img.addEventListener('click', () => {
+        zoomedImage.src = img.src;
+        overlay.style.display = 'flex';
+      });
     });
-  });
-
-  overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
-    zoomedImage.src = '';
-  });
-</script>
+  
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      zoomedImage.src = '';
+    });
+  </script>
   
 </body>
 </html>
