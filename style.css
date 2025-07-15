@@ -1,4 +1,4 @@
-/* Reset y tipografía base */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -33,6 +33,7 @@ header {
   color: white;
   text-align: center;
   padding: 2rem 0;
+  animation: bounce-in-right 1.5s ease-out forwards;
 }
 
 header h1 {
@@ -64,6 +65,11 @@ section h2 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+.zoomable {
+  cursor: zoom-in;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* Videos */
 .video-wrapper {
   position: relative;
@@ -92,7 +98,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Animaciones suaves al hacer scroll */
+/* Animaciones al hacer scroll */
 .hidden:not(.fade-in) {
   opacity: 0;
   transform: translateY(40px);
@@ -105,20 +111,7 @@ footer {
   transition: opacity 1.6s ease, transform 1.6s ease;
 }
 
-
-/* --- Animación especial para el header (rebote desde la derecha) --- */
-header {
-  animation: bounce-in-right 1.5s ease-out forwards;
-  }
-
-.zoomable {
-  cursor: zoom-in;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  z-index: 1;
-}
-
-/* Fondo oscuro al hacer zoom */
-/* NUEVO: Overlay de zoom */
+/* Overlay de zoom */
 .zoom-overlay {
   position: fixed;
   top: 0;
@@ -140,17 +133,7 @@ header {
   cursor: zoom-out;
 }
 
-.zoomable.zoomed {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(2.2);
-  z-index: 1000;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-  cursor: zoom-out;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
+/* Animación especial para el header */
 @keyframes bounce-in-right {
   0% {
     opacity: 0;
@@ -165,6 +148,6 @@ header {
   }
   100% {
     transform: translateX(0);
-    opacity: 1; /* MUY IMPORTANTE */
+    opacity: 1;
   }
 }
